@@ -21,6 +21,8 @@ public class StudentServlet extends HttpServlet {
         studentDetails.setName("abc");
         studentDetails.setEmail("abc@gmail.com");
         studentDetails.setAge(30);
-        response.getWriter().println("Hello world from Student servlet of Entity project!!!");
+
+        datastoreTemplate.save(studentDetails);
+        response.getWriter().println("Hello world from Student servlet of Entity project!!! Updated code!!!");
     }
 }
