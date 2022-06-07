@@ -19,6 +19,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'com.google.cloud:spring-cloud-gcp-data-datastore:3.2.1'
     implementation 'com.google.cloud:spring-cloud-gcp-starter-data-datastore:3.2.1'
+    implementation 'com.google.cloud:spring-cloud-gcp-starter'
     testImplementation 'io.projectreactor:reactor-test'
 }
 
