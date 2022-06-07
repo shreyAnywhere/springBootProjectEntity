@@ -1,6 +1,7 @@
 package com.example.springbootprojectentity;
 
 import com.google.cloud.spring.data.datastore.core.mapping.Entity;
+import com.google.cloud.spring.data.datastore.core.mapping.Field;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
@@ -11,7 +12,6 @@ public class StudentDetails {
     private String ID;
     private String name;
     private String email;
-    private LocalDate dob;
     private int age;
 
     public String getID() {
@@ -36,14 +36,6 @@ public class StudentDetails {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public LocalDate getDob() {
-        return dob;
-    }
-
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
     }
 
     public int getAge() {
