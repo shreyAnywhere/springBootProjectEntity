@@ -16,7 +16,7 @@ public class StudentServlet extends HttpServlet {
     //@Autowired
     //DatastoreTemplate datastoreTemplate;
     @Autowired
-    DatastoreRepository datastoreRepository;
+    StoreRepository storeRepository;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class StudentServlet extends HttpServlet {
             studentDetails.setEmail("abc@gmail.com");
             studentDetails.setAge(30);
 
-            this.datastoreRepository.save(studentDetails);
+            this.storeRepository.save(studentDetails);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
