@@ -1,5 +1,6 @@
 package com.example.springbootprojectentity;
 
+import com.google.cloud.datastore.*;
 import com.google.cloud.spring.data.datastore.core.DatastoreTemplate;
 import com.google.cloud.spring.data.datastore.repository.DatastoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,25 +14,16 @@ import java.io.IOException;
 
 public class StudentServlet extends HttpServlet {
 
-    @Autowired
-    DatastoreTemplate datastoreTemplate;
-    //@Autowired
-    //StoreRepository storeRepository;
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        try{
-            StudentDetails studentDetails = new StudentDetails();
-            studentDetails.setID("1");
-            studentDetails.setName("abc");
-            studentDetails.setEmail("abc@gmail.com");
-            studentDetails.setAge(30);
-
-            this.datastoreTemplate.save(studentDetails);
-        } catch (Exception e) {
-            System.out.print(e.getMessage());
-        }
+        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+        KeyFactory keyFactory = datastore.newKeyFactory().setKind("StudentDetails");
+        FullEntity entity = Entity.newBuilder(keyFactory.newKey())
+                        .set("name", "abc")
+                                .set("email", "abc@gmail.com")
+                                        .build();
+        datastore.put(entity);
 
         response.getWriter().println("Hello world from Student servlet of Entity project!!! Updated code!!! 2.0");
     }
