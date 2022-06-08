@@ -17,12 +17,17 @@ public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        StudentDetails studentDetails = new StudentDetails();
-        studentDetails.setName("abc");
-        studentDetails.setEmail("abc@gmail.com");
-        studentDetails.setAge(30);
+        try{
+            StudentDetails studentDetails = new StudentDetails();
+            studentDetails.setName("abc");
+            studentDetails.setEmail("abc@gmail.com");
+            studentDetails.setAge(30);
 
-        datastoreTemplate.save(studentDetails);
+            datastoreTemplate.save(studentDetails);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         response.getWriter().println("Hello world from Student servlet of Entity project!!! Updated code!!!");
     }
 }
