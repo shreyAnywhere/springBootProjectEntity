@@ -20,6 +20,7 @@ dependencies {
     implementation 'com.google.cloud:spring-cloud-gcp-data-datastore:3.2.1'
     implementation 'com.google.cloud:spring-cloud-gcp-starter-data-datastore:3.2.1'
     implementation 'com.google.cloud:spring-cloud-gcp-starter'
+    implementation 'com.google.cloud:google-cloud-datastore:2.4.0'
     testImplementation 'io.projectreactor:reactor-test'
 }
 

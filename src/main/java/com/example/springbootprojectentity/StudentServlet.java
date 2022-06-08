@@ -21,14 +21,18 @@ public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        StudentDetails studentDetails = new StudentDetails();
-        studentDetails.setID("1");
-        studentDetails.setName("abc");
-        studentDetails.setEmail("abc@gmail.com");
-        studentDetails.setAge(30);
+        try{
+            StudentDetails studentDetails = new StudentDetails();
+            studentDetails.setID("1");
+            studentDetails.setName("abc");
+            studentDetails.setEmail("abc@gmail.com");
+            studentDetails.setAge(30);
 
-        this.datastoreTemplate.save(studentDetails);
+            this.datastoreTemplate.save(studentDetails);
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
 
-        response.getWriter().println("Hello world from Student servlet of Entity project!!! Updated code!!!");
+        response.getWriter().println("Hello world from Student servlet of Entity project!!! Updated code!!! 2.0");
     }
 }
