@@ -23,7 +23,7 @@ public class StudentServlet extends HttpServlet {
             studentDetails.setEmail("abc@gmail.com");
             studentDetails.setAge(30);
 
-            datastoreTemplate.save(studentDetails);
+            this.datastoreTemplate.save(studentDetails);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
