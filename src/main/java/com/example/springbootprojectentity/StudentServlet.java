@@ -13,21 +13,22 @@ import java.io.IOException;
 
 public class StudentServlet extends HttpServlet {
 
-    //@Autowired
-    //DatastoreTemplate datastoreTemplate;
     @Autowired
-    StoreRepository storeRepository;
+    DatastoreTemplate datastoreTemplate;
+    //@Autowired
+    //StoreRepository storeRepository;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try{
             StudentDetails studentDetails = new StudentDetails();
+            studentDetails.setID("1");
             studentDetails.setName("abc");
             studentDetails.setEmail("abc@gmail.com");
             studentDetails.setAge(30);
 
-            this.storeRepository.save(studentDetails);
+            this.datastoreTemplate.save(studentDetails);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
