@@ -26,4 +26,13 @@ public class WebConfig {
         servRegBean.setLoadOnStartup(1);
         return servRegBean;
     }
+
+    @Bean
+    public ServletRegistrationBean<HttpServlet> showdetails() {
+        ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
+        servRegBean.setServlet(new ShowDetails());
+        servRegBean.addUrlMappings("/showdetails");
+        servRegBean.setLoadOnStartup(1);
+        return servRegBean;
+    }
 }

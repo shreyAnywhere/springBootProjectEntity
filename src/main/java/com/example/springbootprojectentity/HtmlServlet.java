@@ -22,6 +22,12 @@ public class HtmlServlet extends HttpServlet {
                 "    <input type = \"submit\" value=\"Submit the form\"><br>\n" +
                 "  </form>\n" +
                 "</div>";
+        String res1 = "<div>\n" +
+                "<form action=\"/showdetails\" method=\"GET\">\n" +
+                "<input type = \"submit\" value=\"Show all the Students\"><br>\n" +
+                "</form>\n" +
+                "</div>";
         response.getWriter().println(res);
+        response.getWriter().println(res1);
     }
 }
