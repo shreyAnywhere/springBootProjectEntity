@@ -14,6 +14,13 @@ public class HtmlServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        response.getWriter().println("hello from html servlet");
+
+        String res = "<div>\n" +
+                "  <form action=\"/studentdetails\" method=\"POST\">\n" +
+                "    Person Name: <input type = \"text\" name = \"name\"><br>\n" +
+                "    Person Email: <input type=\"text\" name=\"email\"><br>\n" +
+                "    <input type = \"submit\" value=\"Submit the form\"><br>\n" +
+                "  </form>\n" +
+                "</div>";
     }
 }
