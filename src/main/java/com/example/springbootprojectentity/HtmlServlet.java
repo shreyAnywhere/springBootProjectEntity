@@ -13,6 +13,7 @@ public class HtmlServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("Html.jsp").forward(request, response);
+        response.setContentType("text/html");
+        response.getWriter().println("hello from html servlet");
     }
 }
