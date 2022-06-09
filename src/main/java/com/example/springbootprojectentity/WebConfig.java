@@ -13,6 +13,15 @@ public class WebConfig {
     public ServletRegistrationBean<HttpServlet> studentServlet() {
         ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
         servRegBean.setServlet(new StudentServlet());
+        servRegBean.addUrlMappings("/studentdetails");
+        servRegBean.setLoadOnStartup(1);
+        return servRegBean;
+    }
+
+    @Bean
+    public ServletRegistrationBean<HttpServlet> htmlServlet() {
+        ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
+        servRegBean.setServlet(new HtmlServlet());
         servRegBean.addUrlMappings("/");
         servRegBean.setLoadOnStartup(1);
         return servRegBean;

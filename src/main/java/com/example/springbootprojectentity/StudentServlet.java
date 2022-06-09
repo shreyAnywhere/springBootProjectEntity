@@ -24,7 +24,6 @@ public class StudentServlet extends HttpServlet {
                                 .set("email", "abc@gmail.com")
                                         .build();
         datastore.put(entity);
-
-        response.getWriter().println("Hello world from Student servlet of Entity project!!! Updated code!!! 2.0");
+        response.getWriter().println("The student details has been stored in datastore...");
     }
 }
