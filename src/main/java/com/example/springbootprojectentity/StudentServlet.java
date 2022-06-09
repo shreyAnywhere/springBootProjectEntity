@@ -17,13 +17,15 @@ public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-//        KeyFactory keyFactory = datastore.newKeyFactory().setKind("StudentDetails");
-//        FullEntity entity = Entity.newBuilder(keyFactory.newKey())
-//                        .set("name", "abc")
-//                                .set("email", "abc@gmail.com")
-//                                        .build();
-//        datastore.put(entity);
+        String name  = request.getParameter("name");
+        String email = request.getParameter("email");
+        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+        KeyFactory keyFactory = datastore.newKeyFactory().setKind("StudentDetails");
+        FullEntity entity = Entity.newBuilder(keyFactory.newKey())
+                        .set("name", name)
+                                .set("email", email)
+                                        .build();
+        datastore.put(entity);
         response.getWriter().println("The student details has been stored in datastore...");
     }
 }
