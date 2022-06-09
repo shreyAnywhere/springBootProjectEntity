@@ -15,7 +15,7 @@ import java.io.IOException;
 public class StudentServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 //        String name  = request.getParameter("name");
 //        String email = request.getParameter("email");
@@ -26,6 +26,6 @@ public class StudentServlet extends HttpServlet {
 //                                .set("email", email)
 //                                        .build();
 //        datastore.put(entity);
-        response.getWriter().println("The student details has been stored in datastore...");
+        response.getWriter().println("The student details has been stored in datastore...updated");
     }
 }
