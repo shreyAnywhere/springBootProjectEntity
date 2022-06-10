@@ -33,6 +33,14 @@ public class Login extends HttpServlet {
             {
                 f = true;
                 response.getWriter().println("You are logged in with " + name + " and " + email);
+                String res = "<div>\n" +
+                        "<form action=\"/update\" method=\"GET\">\n" +
+                        "New Name: <input type = \"text\" name = \"name\"><br>\n" +
+                        "New Email: <input type=\"text\" name=\"email\"><br>\n" +
+                        "<input type = \"submit\" value=\"Update\"><br>\n" +
+                        "</form>\n" +
+                        "</div>";
+                response.getWriter().println(res);
                 break;
             }
         }
