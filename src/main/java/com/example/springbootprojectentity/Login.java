@@ -14,6 +14,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.setContentType("text/html");
         String name  = request.getParameter("name");
         String email = request.getParameter("email");
         boolean f = false;
@@ -32,7 +33,6 @@ public class Login extends HttpServlet {
             if(Objects.equals(name, name1) && Objects.equals(email, email1))
             {
                 f = true;
-                response.getWriter().println("You are logged in with " + name + " and " + email);
                 String res = "<div>\n" +
                         "<form action=\"/update\" method=\"GET\">\n" +
                         "New Name: <input type = \"text\" name = \"name\"><br>\n" +
@@ -41,6 +41,7 @@ public class Login extends HttpServlet {
                         "</form>\n" +
                         "</div>";
                 response.getWriter().println(res);
+                response.getWriter().println("You are logged in with " + name + " and " + email);
                 break;
             }
         }
