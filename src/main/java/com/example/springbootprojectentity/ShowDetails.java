@@ -26,15 +26,8 @@ public class ShowDetails extends HttpServlet {
             Entity entity = results.next();
             String name = entity.getString("name");
             String email = entity.getString("email");
-            if(Objects.equals(name, "shrey3"))
-            {
-                //entity = Entity.newBuilder(entity).set("name", "shrey3").build();
-                //datastore.put(entity);
-                datastore.delete(entity.getKey());
-            }
-
             response.getWriter().println("<li>" + name + "</li>" + "<li>" + email + "</li>");
         }
-        response.getWriter().println("Hello from showdetails servlet...");
+        response.getWriter().println("This is the all the students logged in students do far...");
     }
 }

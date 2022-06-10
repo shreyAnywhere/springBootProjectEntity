@@ -12,8 +12,8 @@ public class WebConfig {
     @Bean
     public ServletRegistrationBean<HttpServlet> studentServlet() {
         ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
-        servRegBean.setServlet(new StudentServlet());
-        servRegBean.addUrlMappings("/studentdetails");
+        servRegBean.setServlet(new Register());
+        servRegBean.addUrlMappings("/register");
         servRegBean.setLoadOnStartup(1);
         return servRegBean;
     }
@@ -21,7 +21,7 @@ public class WebConfig {
     @Bean
     public ServletRegistrationBean<HttpServlet> htmlServlet() {
         ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
-        servRegBean.setServlet(new HtmlServlet());
+        servRegBean.setServlet(new HomeServlet());
         servRegBean.addUrlMappings("/");
         servRegBean.setLoadOnStartup(1);
         return servRegBean;
@@ -32,6 +32,15 @@ public class WebConfig {
         ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
         servRegBean.setServlet(new ShowDetails());
         servRegBean.addUrlMappings("/showdetails");
+        servRegBean.setLoadOnStartup(1);
+        return servRegBean;
+    }
+
+    @Bean
+    public ServletRegistrationBean<HttpServlet> login() {
+        ServletRegistrationBean<HttpServlet> servRegBean = new ServletRegistrationBean<>();
+        servRegBean.setServlet(new Login());
+        servRegBean.addUrlMappings("/login");
         servRegBean.setLoadOnStartup(1);
         return servRegBean;
     }
