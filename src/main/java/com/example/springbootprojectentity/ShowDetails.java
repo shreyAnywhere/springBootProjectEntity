@@ -28,6 +28,6 @@ public class ShowDetails extends HttpServlet {
             String email = entity.getString("email");
             response.getWriter().println("<li>" + name + "</li>" + "<li>" + email + "</li>");
         }
-        response.getWriter().println("This is the all the students logged in students do far...");
+        response.getWriter().println("This is the all the logged in students so far...");
     }
 }

@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
             if(Objects.equals(name, name1) && Objects.equals(email, email1))
             {
                 f = true;
-                response.getWriter().println("You are logged in...");
+                response.getWriter().println("You are logged in with " + name + " and " + email);
                 break;
             }
         }
