@@ -27,6 +27,7 @@ public class ShowDetails extends HttpServlet {
             String name = entity.getString("name");
             String email = entity.getString("email");
             response.getWriter().println("<li>" + name + "</li>" + "<li>" + email + "</li>");
+            response.getWriter().println("<br>");
         }
         response.getWriter().println("This is the all the logged in students so far...");
     }
