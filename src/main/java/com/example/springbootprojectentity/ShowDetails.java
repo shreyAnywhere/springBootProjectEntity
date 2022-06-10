@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 public class ShowDetails extends HttpServlet {
 
@@ -25,6 +26,12 @@ public class ShowDetails extends HttpServlet {
             Entity entity = results.next();
             String name = entity.getString("name");
             String email = entity.getString("email");
+            if(Objects.equals(name, "shrey1"))
+            {
+                entity = Entity.newBuilder(entity).set("name", "shrey3").build();
+                datastore.put(entity);
+            }
+
             response.getWriter().println("<li>" + name + "</li>" + "<li>" + email + "</li>");
         }
         response.getWriter().println("Hello from showdetails servlet...");
