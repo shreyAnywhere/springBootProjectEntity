@@ -26,7 +26,7 @@ public class ShowDetails extends HttpServlet {
             Entity entity = results.next();
             String name = entity.getString("name");
             String email = entity.getString("email");
-            if(Objects.equals(name, "shrey1"))
+            if(Objects.equals(name, "shrey3"))
             {
                 //entity = Entity.newBuilder(entity).set("name", "shrey3").build();
                 //datastore.put(entity);
