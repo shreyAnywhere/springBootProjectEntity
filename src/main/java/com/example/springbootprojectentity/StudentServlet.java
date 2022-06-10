@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class StudentServlet extends HttpServlet {
 
+    private long id = 0;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,6 +22,7 @@ public class StudentServlet extends HttpServlet {
         String email = request.getParameter("email");
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         KeyFactory keyFactory = datastore.newKeyFactory().setKind("StudentDetails");
+        //Key key  = keyFactory.newKey(id++);
         FullEntity entity = Entity.newBuilder(keyFactory.newKey())
                         .set("name", name)
                                 .set("email", email)
