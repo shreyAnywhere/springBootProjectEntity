@@ -22,5 +22,6 @@ public class Delete extends HttpServlet {
         datastore.delete(entity.getKey());
 
         response.getWriter().println("Your entity has been deleted...");
+        response.sendRedirect("/");
     }
 }
