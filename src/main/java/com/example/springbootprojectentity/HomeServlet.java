@@ -26,13 +26,6 @@ public class HomeServlet extends HttpServlet {
                 "<input type = \"submit\" value=\"Register\"><br>\n" +
                 "</form>\n" +
                 "</div>";
-        String res2 = "<div>\n" +
-                "<form action=\"/delete\" method=\"GET\">\n" +
-                "Person Name: <input type = \"text\" name = \"name\"><br>\n" +
-                "Person Email: <input type=\"text\" name=\"email\"><br>\n" +
-                "<input type = \"submit\" value=\"Delete\"><br>\n" +
-                "</form>\n" +
-                "</div>";
         String res4 = "<div>\n" +
                 "<form action=\"/showdetails\" method=\"GET\">\n" +
                 "<input type = \"submit\" value=\"Show all the LoggedIn Students\"><br>\n" +
@@ -40,7 +33,6 @@ public class HomeServlet extends HttpServlet {
                 "</div>";
         response.getWriter().println(res);
         response.getWriter().println(res1);
-        response.getWriter().println(res2);
         response.getWriter().println(res4);
     }
 }
